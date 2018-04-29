@@ -3,7 +3,7 @@ package hello.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hello.interfaces.PersonDAO;
+import hello.interfaces.PersonRepository;
 import hello.interfaces.PersonService;
 import hello.model.Person;
 
@@ -11,14 +11,19 @@ import hello.model.Person;
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired
-	PersonDAO personDAO;
+	private PersonRepository personRepository;
 	
 	public void addPerson(Person person) {
 		
-		System.out.println("in service " +person.getPersonName());
+		System.out.println("in service method: adderson " +person.getPersonName());
 		person.getPersonName();
-		personDAO.addPerson(person);
+		personRepository.save(person);
 		
 	}
+
+	/*@Autowired
+	public PersonServiceImpl(PersonRepository personRepository) {
+		this.personRepository = personRepository;
+	}*/
 	
 }

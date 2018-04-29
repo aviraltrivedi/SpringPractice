@@ -8,12 +8,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 @Entity
-@Component
+@Configuration
 public class Person implements Serializable{
 	
+	public Person(String personName) {
+		this.personName = personName;
+	}
+
+	@SuppressWarnings("unused")
+	private Person() {
+		
+	}
 	/**
 	 * 
 	 */
@@ -21,16 +29,16 @@ public class Person implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String personId;
+	private Integer personId;
 	
 	@Column
 	private String personName;
 
-	public String getPersonId() {
+	public Integer getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(String personId) {
+	public void setPersonId(Integer personId) {
 		this.personId = personId;
 	}
 

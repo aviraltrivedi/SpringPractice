@@ -12,14 +12,14 @@
 		alert("button clicked");
 		var strPersonName = document.getElementById("person").personName.value;
 		alert(strPersonName);
-		document.getElementById("person").action = "/addPerson"
+		document.getElementById("person").action = "/addedPerson"
 		alert("this happened");
 		document.getElementById("person").submit();
 	}
 </script>
 </head>
 <body>
-	<form:form modelAttribute="person" id="person">
+	<form:form modelAttribute="person" id="person" action="/addPerson">
 		Person Name: <form:input path="personName"></form:input>
 	</form:form>
 	<button id="addPerson" onclick="addPerson();">Submit</button>
