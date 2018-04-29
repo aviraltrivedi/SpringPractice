@@ -14,14 +14,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Person implements Serializable{
 	
-	public Person(String personName) {
+	/*public Person(String personName) {
 		this.personName = personName;
 	}
 
 	@SuppressWarnings("unused")
 	private Person() {
 		
-	}
+	}*/
 	/**
 	 * 
 	 */
